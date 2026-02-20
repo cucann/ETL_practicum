@@ -27,7 +27,7 @@
 
 В ходе работы были освоены базовые навыки работы с ETL инструментом Pentaho Data Integration. Создан конвейер обработки данных, произведена загрузка в СУБД.
 
-**Приложение:**
+**Приложение:**  
 [lab_02_1_csv_demand_f.ktr…](lab_02_1_csv_demand_f.ktr)  
 [Ссылка на датасет](https://www.kaggle.com/datasets/felixzhao/productdemandforecasting?resource=download)
 
