@@ -71,3 +71,12 @@ Filter Rows
 
 ## Приложения к лабораторной работе:  
 
+[Файл Colaboratory](https://colab.research.google.com/drive/1g5GGvp-MS1epCo4oBSoN2_pD2xYoPu-B#scrollTo=Ln8YtQd9C0mO)  
+
+[Файл lab_02_1_csv_orders.ktr](/lab_02_1_csv_orders.ktr)  
+
+[Файл lab_02_2_csv_to_Customers.ktr](/lab_02_2_csv_to_Customers.ktr)  
+
+[Файл lab_02_3_csv_to_products.ktr](/lab_02_3_csv_to_products.ktr)  
+
+[Файл Job_CSV_to_MYsql.kjb](/Job_CSV_to_MYsql.kjb)  
