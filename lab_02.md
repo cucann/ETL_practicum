@@ -68,10 +68,6 @@ Filter Rows
 **Заключение**  
 Компании рекомендуется масштабировать практики наиболее маржинального менеджера Chuck Magee при сохранении объёмной стратегии лидера по продажам и сосредоточить инвестиции на более прибыльных категориях (Office Supplies и Technology), одновременно повышая маржинальность направления Furniture.
 
-<img width="1180" height="280" alt="image" src="https://github.com/user-attachments/assets/eb29f3c7-3de3-41b5-82da-bd2634cc8eae" />
 
-<img width="1180" height="320" alt="image" src="https://github.com/user-attachments/assets/6d444a09-c24f-471a-b012-e042eeb066cd" />
-
-<img width="804" height="317" alt="image" src="https://github.com/user-attachments/assets/1444f3da-454d-44cb-8dfd-01df0b5dd065" />
-
+## Приложения к лабораторной работе:  
 
