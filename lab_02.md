@@ -44,6 +44,10 @@ Filter Rows
 <img width="1059" height="554" alt="image" src="https://github.com/user-attachments/assets/82ba4167-0b8d-4e6d-b723-c9cd214708e9" />
 <img width="1054" height="295" alt="image" src="https://github.com/user-attachments/assets/0c6e8fdf-1a87-45ed-aa40-994ff5466566" />
 
+модуль Set Variables:  
+<img width="1195" height="540" alt="image" src="https://github.com/user-attachments/assets/1e6bdedb-86ba-4edd-a324-39f144cd8c36" />
+
+
 модуль HTTP:  
 <img width="1220" height="694" alt="image" src="https://github.com/user-attachments/assets/cba4f40a-cd5c-4fdc-a279-a9ecad9d571c" />
 
