@@ -136,19 +136,74 @@ ORDER BY cost_per_km DESC;
 
 **Шаги трансформации:**  
 1. Read trips from PostgreSQL	Table Input	Чтение данных о рейсах из PostgreSQL  
-<img width="1054" height="430" alt="image" src="https://github.com/user-attachments/assets/c0d90b94-6c9c-4962-9b67-abf8523d8b95" />
+<img width="1054" height="430" alt="image" src="https://github.com/user-attachments/assets/c0d90b94-6c9c-4962-9b67-abf8523d8b95" />  
 2. Read fuel costs from CSV	CSV Input	Чтение затрат на топливо  
-<img width="952" height="625" alt="image" src="https://github.com/user-attachments/assets/46c74fd1-d1fc-44e1-93e4-9d947bec125a" />
+<img width="952" height="625" alt="image" src="https://github.com/user-attachments/assets/46c74fd1-d1fc-44e1-93e4-9d947bec125a" />  
 3. Read route sheets from CSV	CSV Input	Чтение маршрутных листов  
-<img width="902" height="647" alt="image" src="https://github.com/user-attachments/assets/46239653-6e45-4773-82ee-82c78fdac5cd" />
+<img width="902" height="647" alt="image" src="https://github.com/user-attachments/assets/46239653-6e45-4773-82ee-82c78fdac5cd" />  
 4. Join trips with fuel costs	Merge Join	Объединение по vehicle_id (INNER JOIN)  
-<img width="469" height="439" alt="image" src="https://github.com/user-attachments/assets/7e973252-5d70-4abc-b896-1f4bf214c4ed" />
+<img width="469" height="439" alt="image" src="https://github.com/user-attachments/assets/7e973252-5d70-4abc-b896-1f4bf214c4ed" />  
 5. Join with route sheets	Merge Join	Объединение по trip_id (INNER JOIN)  
-<img width="454" height="420" alt="image" src="https://github.com/user-attachments/assets/96e3105b-f124-4407-821f-e307f8ebfb3d" />
+<img width="454" height="420" alt="image" src="https://github.com/user-attachments/assets/96e3105b-f124-4407-821f-e307f8ebfb3d" />  
 6. Calculate cost per km	Modified JavaScript Value	Расчет total_fuel_cost, total_cost, cost_per_km  
-<img width="977" height="612" alt="image" src="https://github.com/user-attachments/assets/0e30e794-9bbe-44b3-a450-57b26411402c" />
+<img width="977" height="612" alt="image" src="https://github.com/user-attachments/assets/0e30e794-9bbe-44b3-a450-57b26411402c" />  
 7. Load to MySQL	Table Output	Загрузка данных в MySQL  
 <img width="950" height="433" alt="image" src="https://github.com/user-attachments/assets/049fa8e2-ff0c-47bc-ab5e-ee868bafc389" />  
+
+Код для расчетов:
+```bash
+var dist = distance_km;
+var consumption = fuel_consumption_per_100km;
+var cost_liter = fuel_cost_per_liter;
+var expenses = additional_expenses;
+
+var total_fuel_cost = (dist / 100) * consumption * cost_liter;
+var total_cost = total_fuel_cost + expenses;
+var cost_per_km = total_cost / dist;
+
+var total_fuel = total_fuel_cost;
+var total_cost_val = total_cost;
+var cost_per_km_val = cost_per_km;
+
+true;
+```
+
+**Логи выполнения:**  
+<img width="910" height="229" alt="image" src="https://github.com/user-attachments/assets/10a838bd-6489-4eb4-8ed3-768f35fddf71" />  
+
+### Результаты в MySQL
+**Таблица fact_logistics_report**  
+```sql
+SELECT trip_id, vehicle_id, distance_km, total_cost, cost_per_km 
+FROM fact_logistics_report 
+ORDER BY trip_id;
+```
+
+<img width="2474" height="1486" alt="image" src="https://github.com/user-attachments/assets/dd2e5ac9-fa39-426a-ab53-2069ecadca84" />  
+
+**Представление view_logistics_analytics**  
+```sql
+SELECT trip_id, vehicle_id, cost_per_km, cost_category 
+FROM view_logistics_analytics 
+ORDER BY cost_per_km DESC;
+```
+
+<img width="2400" height="1332" alt="image" src="https://github.com/user-attachments/assets/2b2eeefc-412d-4ac8-a348-68c2f54539f6" />  
+
+## Анализ результатов
+### Выводы  
+Все рейсы имеют низкую стоимость (< 15 руб/км):  
+Самый экономичный рейс: trip_id 14 (G707) - 3.18 руб/км  
+Самый затратный рейс: trip_id 6 (D404) - 8.42 руб/км  
+Факторы, влияющие на стоимость:  
+Электромобиль (G707) показал наименьшую стоимость  
+Рейсы с большим расстоянием имеют более высокую общую стоимость, но удельная стоимость остается низкой  
+Качество данных:  
+Все 17 рейсов из PostgreSQL успешно объединены с файловыми источниками  
+7 уникальных транспортных средств с полными данными о топливе  
+Отсутствие пропусков в ключевых полях  
+
+
 
 
 
