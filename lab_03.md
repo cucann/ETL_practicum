@@ -66,6 +66,9 @@ CREATE TABLE trips (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+<img width="714" height="287" alt="image" src="https://github.com/user-attachments/assets/46e24d13-edfe-461b-abcd-e7683dc791e0" />  
+<img width="882" height="483" alt="image" src="https://github.com/user-attachments/assets/69fbaa2c-1929-43d6-9c44-0231b1f40f58" />  
+
 
 **Данные таблицы trips (17 записей):**
 <img width="742" height="402" alt="image" src="https://github.com/user-attachments/assets/7a8cd569-3ad7-4a09-bfb2-852cc46683c9" />  
@@ -76,6 +79,10 @@ CREATE TABLE trips (
 
 **route_sheets.csv (маршрутные листы):**  
 <img width="590" height="539" alt="image" src="https://github.com/user-attachments/assets/215b5f42-2f2f-45dd-b4e1-d98efb5fd1b5" />  
+
+**Запуск PostgreSQL контейнера:**  
+<img width="447" height="305" alt="image" src="https://github.com/user-attachments/assets/91375218-8c57-45e8-9c88-0e71d73c44c6" />  
+
 
 ### 3. MySQL (Целевое хранилище)  
 
