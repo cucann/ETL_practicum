@@ -152,7 +152,7 @@ ORDER BY cost_per_km DESC;
 <img width="469" height="439" alt="image" src="https://github.com/user-attachments/assets/7e973252-5d70-4abc-b896-1f4bf214c4ed" />  
 -Join with route sheets	Merge Join	Объединение по trip_id (INNER JOIN)  
 <img width="454" height="420" alt="image" src="https://github.com/user-attachments/assets/96e3105b-f124-4407-821f-e307f8ebfb3d" />  
--Calculate cost per km	Modified JavaScript Value	Расчет total_fuel_cost, total_cost, cost_per_km  
+-Расчет total_fuel_cost, total_cost, cost_per_km  
 <img width="977" height="612" alt="image" src="https://github.com/user-attachments/assets/0e30e794-9bbe-44b3-a450-57b26411402c" />  
 -Load to MySQL	Table Output	Загрузка данных в MySQL  
 <img width="950" height="433" alt="image" src="https://github.com/user-attachments/assets/049fa8e2-ff0c-47bc-ab5e-ee868bafc389" />  
