@@ -372,5 +372,59 @@ docker compose up -d
 
 
 
+## ML Аналитика
+После успешного выполнения DAG variant_09_athens_weather в папке data была создана обученная модель ml_model.pkl. Модель представляет собой линейную регрессию, обученную на 14 наблюдениях (температура и соответствующие продажи).  
+*Параметры модели:*  
+Коэффициент: 4.94  
+Интерсепт: 101.74  
+Формула: Продажи = 4.94 * temp_rounded + 101.74  
+*Интерпретация:*  
+При увеличении температуры на 1 градус продажи растут на 4.94 единицы  
+Базовый уровень продаж при 0 градусах составляет 101.74  
+
+### Загрузка модели в [Google Collab](https://colab.research.google.com/drive/1J6zJRvRiZcX2UYFegS2UmWO9zZMLSy-n?usp=sharing)  
+```bash
+print(" Загрузите файл ml_model.pkl")
+uploaded = files.upload()
+
+file_name = list(uploaded.keys())[0]
+model = joblib.load(file_name)
+
+print(f" Модель загружена: {file_name}")
+print(f"   Коэффициент: {model.coef_[0]:.2f}")
+print(f"   Интерсепт: {model.intercept_:.2f}")
+```
+
+Результат:
+<img width="359" height="76" alt="image" src="https://github.com/user-attachments/assets/654bced0-6a6c-47c0-aef4-04bf9b95706e" />  
+
+### Прогноз по заданию (температура 15°C)
+В соответствии с индивидуальным заданием (вариант 9) выполнен прогноз продаж при температуре 15°C.  
+```bash
+my_temp = 15
+input_data = pd.DataFrame({'temp_rounded': [my_temp]})
+prediction = model.predict(input_data)[0]
+
+print(f"При температуре {my_temp}°C прогнозируемые продажи составят: {prediction:.2f}")
+```
+<img width="516" height="73" alt="image" src="https://github.com/user-attachments/assets/75c9bdc6-abb3-4d7a-8405-61b5ab89b6cf" />  
+
+### Прогноз по реальным данным (средняя температура 13°C)
+На основе реальных данных из DAG (средняя температура за 14 дней) выполнен прогноз.
+
+```bash
+avg_temp = 13
+input_data_avg = pd.DataFrame({'temp_rounded': [avg_temp]})
+avg_prediction = model.predict(input_data_avg)[0]
+
+print(f"Средняя температура в Афинах: {avg_temp}°C")
+print(f"Прогнозируемые продажи: {avg_prediction:.2f}")
+```
+<img width="481" height="108" alt="image" src="https://github.com/user-attachments/assets/57fa05e6-2b90-4762-b5b5-b5df2f128829" />  
+
+### Визуализация
+<img width="868" height="501" alt="image" src="https://github.com/user-attachments/assets/56430a19-a22e-434f-8702-bd37a6a7c709" />  
+
+
 
 
