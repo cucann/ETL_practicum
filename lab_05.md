@@ -291,7 +291,9 @@ t1 >> t2
 t3 >> t4
 [t2, t4] >> t5
 t5 >> t6 >> t7
-```
+  ```
+  
+</details>
 
 ## app/app.py (Streamlit дашборд)
 <details>
@@ -342,7 +344,9 @@ if os.path.exists(data_path):
 
 else:
     st.warning("Данные еще не сгенерированы. Запустите DAG в Airflow.")
-```
+  ```
+  
+</details>
 
 ## 1.4. Запуск
 ```bash
