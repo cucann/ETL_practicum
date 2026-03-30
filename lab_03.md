@@ -29,46 +29,27 @@ cost_per_km = total_cost / distance_km
 
 ```mermaid
 graph LR
-    subgraph Source[Источники данных]
-        A(("PostgreSQL<br/>trips<br/>100 рейсов"))
-        B(("CSV<br/>fuel_costs.csv<br/>7 записей"))
-        C(("CSV<br/>route_sheets.csv<br/>100 записей"))
+    subgraph Source[Source Layer]
+        A[PostgreSQL trips]
+        B[CSV fuel_costs]
+        C[CSV route_sheets]
     end
 
-    subgraph ETL[ETL Layer - Pentaho Data Integration]
-        D[Table Input<br/>PostgreSQL]
-        E[CSV Input<br/>fuel_costs]
-        F[CSV Input<br/>route_sheets]
-        G[Merge Join<br/>vehicle_id]
-        H[Stream Lookup<br/>trip_id]
-        I[Modified JS<br/>Расчет cost_per_km]
-        J[Table Output<br/>MySQL]
+    subgraph Storage[Storage Layer]
+        D[(MySQL<br/>fact_logistics_report)]
+        E[(MySQL<br/>view_logistics_analytics)]
     end
 
-    subgraph Storage[Хранилище]
-        K[(MySQL<br/>mgpu_ico_etl_09)]
-        L[fact_logistics_report<br/>Таблица фактов]
-        M[view_logistics_analytics<br/>Представление]
+    subgraph Business[Business Layer]
+        F[Отчет<br/>стоимость 1 км]
     end
 
-    subgraph Business[Аналитика]
-        N[Отчет: стоимость 1 км<br/>по каждому рейсу]
-    end
-
-    A --> D
-    B --> E
-    C --> F
-    D --> G
-    E --> G
-    G --> H
-    F --> H
-    H --> I
-    I --> J
-    J --> K
-    K --> L
-    K --> M
-    L --> N
-    M --> N
+    A -->|ETL Pentaho| D
+    B -->|ETL Pentaho| D
+    C -->|ETL Pentaho| D
+    D --> E
+    D --> F
+    E --> F
 ```
 
 
