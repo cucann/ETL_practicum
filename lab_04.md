@@ -47,6 +47,3 @@
 ---
 
 
-* [ССЫЛКА НА РАБОТУ В СИСТЕМЕ Google Colaboratory](https://colab.research.google.com/drive/1UU44b0njO4ZMgOnbAPkEQKe1WYp52U6D?usp=sharing)
-
-* [ССЫЛКА НА РАБОТУ В ФОРМАТЕ *.ipynb](/Etl_lab_04.ipynb)
