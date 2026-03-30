@@ -158,8 +158,11 @@ ORDER BY cost_per_km DESC;
 
 ### ETL Реализация (Pentaho Data Integration)
 **Настройка подключений в Spoon**  
-**Трансформация lab_03.ktr:**  
 
+**Job**  
+<img width="949" height="430" alt="image" src="https://github.com/user-attachments/assets/682dbc83-f9d5-4442-a8fb-fd5e15b3e78c" />  
+
+**Трансформация lab_03.ktr:**  
 <img width="1227" height="699" alt="image" src="https://github.com/user-attachments/assets/0312a0d4-c038-48ba-a011-e6e1ec3aae99" />  
 
 **Шаги трансформации:**  
