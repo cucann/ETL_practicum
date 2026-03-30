@@ -359,7 +359,18 @@ docker compose up -d
 
 *Результат: Airflow доступен по адресу http://localhost:8080, логин admin, пароль admin.*
 
-## Индивидуальное задание (Вариант 9)
+## Структура DAG
+<img width="1011" height="437" alt="image" src="https://github.com/user-attachments/assets/80756dea-4de8-4a9e-9506-3ca584574c23" />  
+
+*DAG успешно запущен*  
+<img width="1459" height="772" alt="image" src="https://github.com/user-attachments/assets/25085a99-357c-4ee6-abf2-9cfb003c60c8" />  
+
+## Streamlit (Дашборд)  
+<img width="1439" height="684" alt="image" src="https://github.com/user-attachments/assets/f33c5dad-493f-498e-aa87-4bd355a34a4a" />  
+<img width="1407" height="524" alt="image" src="https://github.com/user-attachments/assets/a6726775-5522-435e-9e68-b52a3509e64a" />  
+<img width="1422" height="406" alt="image" src="https://github.com/user-attachments/assets/2450158c-6936-4ba9-80cb-758993ff15da" />
+
+
 
 
 
