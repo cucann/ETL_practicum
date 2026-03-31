@@ -210,7 +210,7 @@ FROM fact_logistics_report
 ORDER BY trip_id;
 ```
 
-<img width="2474" height="1486" alt="image" src="https://github.com/user-attachments/assets/dd2e5ac9-fa39-426a-ab53-2069ecadca84" />  
+<img width="1266" height="560" alt="image" src="https://github.com/user-attachments/assets/97156e50-5256-41d5-80d5-eb0627431e05" />  
 
 **Представление view_logistics_analytics**  
 ```sql
@@ -219,7 +219,7 @@ FROM view_logistics_analytics
 ORDER BY cost_per_km DESC;
 ```
 
-<img width="2400" height="1332" alt="image" src="https://github.com/user-attachments/assets/2b2eeefc-412d-4ac8-a348-68c2f54539f6" />  
+<img width="1263" height="738" alt="image" src="https://github.com/user-attachments/assets/e3e2a8be-bd6d-4e11-a04d-5729c2f47b27" />  
 
 ## Анализ результатов
 ### Выводы  
