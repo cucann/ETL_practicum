@@ -221,6 +221,10 @@ ORDER BY cost_per_km DESC;
 
 <img width="1265" height="733" alt="image" src="https://github.com/user-attachments/assets/23ca6af3-85c4-40b5-81d0-5a96d2477e7c" />  
 
+*Самые экономичные рейсы*  
+<img width="1058" height="299" alt="image" src="https://github.com/user-attachments/assets/575727a9-4742-411d-a4c9-0d30b6f55bba" />
+
+
 ## Анализ результатов
 ### Распределение по категориям
 - Низкая стоимость (<15 руб/км): 60% рейсов
