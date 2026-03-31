@@ -252,7 +252,8 @@ ORDER BY cost_per_km DESC;
 
 
 
-
+[Файл трансформации](lab_03.ktr)  
+[Файл JOB](Job_CSV_to_MYsql.kjb)  
 
 
 
