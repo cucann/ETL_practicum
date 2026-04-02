@@ -230,7 +230,7 @@ with DAG(
 <img width="584" height="185" alt="image" src="https://github.com/user-attachments/assets/066fd107-e31c-4d9a-b149-2c243ebd5900" />  
 
 5. Лог недоступных изображений  
-В ходе выполнения DAG были зафиксированы ошибки при скачивании изображений. Файл *failed_images.csv* содержит список URL, по которым не удалось загрузить изображения, с указанием причины ошибки.  
+В ходе выполнения DAG были зафиксированы ошибки при скачивании изображений. Файл *failed_images.csv* содержит список URL, по которым не удалось загрузить изображения, с указанием причины ошибки.    
 Содержимое файла failed_images.csv:  
 <img width="585" height="401" alt="image" src="https://github.com/user-attachments/assets/6ebbb834-8afe-4394-bee6-3f0869fbcdea" />  
 Все ошибки имеют тип Read timed out с таймаутом 15 секунд. Это означает, что сервер *thespacedevs-prod.nyc3.digitaloceanspaces.com* не успел ответить на запрос в течение отведенного времени.  
