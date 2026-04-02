@@ -231,14 +231,17 @@ with DAG(
 
 5. Лог недоступных изображений  
 В ходе выполнения DAG были зафиксированы ошибки при скачивании изображений. Файл *failed_images.csv* содержит список URL, по которым не удалось загрузить изображения, с указанием причины ошибки.    
-Содержимое файла failed_images.csv:  
-<img width="585" height="401" alt="image" src="https://github.com/user-attachments/assets/6ebbb834-8afe-4394-bee6-3f0869fbcdea" />  
-Все ошибки имеют тип Read timed out с таймаутом 15 секунд. Это означает, что сервер *thespacedevs-prod.nyc3.digitaloceanspaces.com* не успел ответить на запрос в течение отведенного времени.  
+Содержимое файла failed_images.csv:   
+<img width="585" height="401" alt="image" src="https://github.com/user-attachments/assets/6ebbb834-8afe-4394-bee6-3f0869fbcdea" />
 
-6. Streamlit дашборд
+Все ошибки имеют тип Read timed out с таймаутом 15 секунд. Это означает, что сервер *thespacedevs-prod.nyc3.digitaloceanspaces.com* не успел ответить на запрос в течение отведенного времени.   
+
+7. Streamlit дашборд
 <img width="1465" height="747" alt="image" src="https://github.com/user-attachments/assets/ee80709d-2cc5-484a-a82c-3a23e7d553fb" />
 <img width="1435" height="577" alt="image" src="https://github.com/user-attachments/assets/71dacabd-1c06-4ca6-9d13-84d7a46a39a4" />
-<img width="1348" height="680" alt="image" src="https://github.com/user-attachments/assets/0c7b7a94-e7de-45a6-93b8-b1e692c46d08" />  
+<img width="1348" height="680" alt="image" src="https://github.com/user-attachments/assets/0c7b7a94-e7de-45a6-93b8-b1e692c46d08" />
+<img width="1437" height="628" alt="image" src="https://github.com/user-attachments/assets/a697244f-47d8-4257-b60b-ac6c13e96530" />  
+
 
 **Дашборд отображает:**  
 -Таблицу с ближайшими запусками  
