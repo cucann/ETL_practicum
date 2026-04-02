@@ -78,6 +78,7 @@ graph LR
 ```
 
 ### Файл DAG: dags/listing_Aimukhanova_9_Rocket.py
+[Файл listing_Aimukhanova_9_Rocket.py](listing_Aimukhanova_9_Rocket.py)  
 <details>
   <summary></summary>
 
