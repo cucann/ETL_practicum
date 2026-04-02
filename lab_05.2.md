@@ -26,6 +26,57 @@
 
 ## Реализация
 
+**Общая архитектура решения**  
+```mermaid
+graph TB
+    subgraph Source["Source Layer"]
+        API["Launch Library 2 API"]
+        URL["External Image URLs"]
+    end
+    
+    subgraph Storage["Storage Layer"]
+        JSON["launches.json"]
+        IMG["all_images/"]
+        FAILED["failed_images.csv"]
+        ML["ml_predictions.csv"]
+        LOGS["logs/"]
+    end
+    
+    subgraph Business["Business Layer"]
+        AIR["Airflow (8082)"]
+        JUP["Jupyter (8889)"]
+        STREAM["Streamlit (8502)"]
+        NOTIFY["Log Нотификация"]
+    end
+    
+    API --> JSON
+    API --> IMG
+    URL --> IMG
+    IMG --> FAILED
+    IMG --> ML
+    JSON --> AIR
+    IMG --> STREAM
+    ML --> STREAM
+    AIR --> NOTIFY
+    JUP --> ML
+```
+
+**Архитектура DAG**  
+```mermaid
+graph LR
+    START((START)) --> AGG
+    
+    subgraph VARIANT9["Вариант 9"]
+        AGG["aggregate_images"]
+        LOG["log_failed_images"]
+        NOTIFY["send_notification"]
+    end
+    
+    AGG --> LOG
+    LOG --> NOTIFY
+    NOTIFY --> END((END))
+```
+
 ### Файл DAG: dags/listing_Aimukhanova_9_Rocket.py
 <details>
   <summary></summary>
